@@ -261,5 +261,22 @@
 "before restoring",
 "before importing",
 "before deleting a slot",
-"manual"
+"manual",
+"Install RPCS3 first (Emulator tile): it is what installs PKGs.",
+"Close the game before installing.",
+"Festival of Blood needs the .rap licence from your account: install the .rap file too.",
+"\"%s\" is not a PS3 PKG.",
+"Not enough space: %.1f GB free needed on %s.",
+"RPCS3 could not install \"%s\". See rpcs3\\log\\RPCS3.log.",
+"\"%s\" (%s) is not a supported release. The installer only accepts these:\n\n%s",
+"\"%s\" is not a PS3 disc image.",
+"\"%s\" is encrypted. Use a decrypted copy, made with your own dump tool.",
+"%s already exists. Delete or rename that folder to install again.",
+"\"%s\": choose .pkg, .iso or .rap files.",
+"Install .pkg / .iso",
+"Install .pkg / .iso…",
+"Install a game from your own .pkg, .iso or .rap files.\n\nOnly use copies dumped from your own disc or your own PSN account. The launcher does not download games or decrypt discs.\n\nAccepted releases:\n%s",
+"PS3 game",
+"Installing… %d / %d MB",
+"Installed: %s"
 ]

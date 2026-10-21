@@ -30,6 +30,7 @@ Irmão do [Conduit Launcher](https://github.com/Fer-Magalhaes/conduit-launcher) 
 - **Patches e cheats** do banco do RPCS3, com chave: pular a abertura, campo de visão, sem limite de
   velocidade, todos os poderes…
 - **Mods de arrastar e soltar**: jogue um `.zip` na pasta `mods`. Formato em [docs/MODS.md](docs/MODS.md).
+- **Instalador para os seus .pkg / .iso**, limitado às versões testadas.
 - **Versões PSN** com arquivos criptografados (SDAT) são decriptadas sozinhas, numa cópia. Licenças `.rap`
   ao lado do jogo são instaladas sozinhas.
 - Tempo de jogo, atalhos na Steam e na área de trabalho e status no Discord.
@@ -41,8 +42,24 @@ Irmão do [Conduit Launcher](https://github.com/Fer-Magalhaes/conduit-launcher) 
 2. Abra **Conduit Legacy Launcher.exe**. No quadro **Emulador**, clique para baixar o RPCS3 e o firmware
    (cerca de 240 MB no total).
 3. Em **Jogo e idioma**, escolha a pasta de cada jogo. Ou coloque os jogos na pasta `jogos`, uma subpasta
-   por jogo, que o launcher acha sozinho.
+   por jogo, que o launcher acha sozinho. Ou use **Instalar .pkg / .iso** (veja abaixo).
 4. Aperte **JOGAR**.
+
+### Instalar de .pkg / .iso
+
+**Jogo e idioma > Instalar .pkg / .iso** instala os seus arquivos na pasta `jogos`. Dá para escolher vários
+de uma vez, como o jogo, a atualização e a licença `.rap`. Só as versões testadas com o launcher são
+aceitas; o resto é recusado:
+
+| Jogo | Arquivo | Versão |
+|---|---|---|
+| inFAMOUS | `.iso` (dump do disco já decriptado) | BCES00609 |
+| inFAMOUS 2 | `.pkg` (jogo e atualização) | NPUA98125, BCUS98125 |
+| Festival of Blood | `.pkg` + `.rap` | NPUA80657 |
+
+Os PKGs são instalados pelo próprio RPCS3. A imagem de disco precisa já estar decriptada (como as
+ferramentas de dump do PS3 costumam gerar): o launcher não decripta discos e recusa imagens criptografadas.
+Ele nunca baixa jogos.
 
 ### Que arquivos cada jogo precisa
 | Jogo | Pasta | Versões |

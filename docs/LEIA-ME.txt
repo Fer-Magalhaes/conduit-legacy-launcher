@@ -8,7 +8,8 @@ Comecar
 -------
 1. Abra "Conduit Legacy Launcher.exe".
 2. Clique no quadro "Emulador" para baixar o RPCS3 e o firmware do PS3 (ou rode baixar-emulador.bat).
-3. Em "Jogo e idioma", escolha a pasta de cada jogo (ou coloque os jogos na pasta "jogos").
+3. Em "Jogo e idioma", escolha a pasta de cada jogo (ou coloque os jogos na pasta "jogos"),
+   ou use "Instalar .pkg / .iso" com os seus arquivos (so as versoes testadas: veja o README).
 4. JOGAR.
 
 Mods: arraste o .zip para a pasta "mods". Formato em MODS.md.
@@ -24,5 +25,6 @@ RPCS3 team. No game files are included: use your own copies.
 
 1. Open "Conduit Legacy Launcher.exe".
 2. Click the "Emulator" tile to download RPCS3 and the PS3 firmware (or run baixar-emulador.bat).
-3. In "Game and language", choose each game's folder (or put the games in the "jogos" folder).
+3. In "Game and language", choose each game's folder (or put the games in the "jogos" folder),
+   or use "Install .pkg / .iso" with your own files (tested releases only: see the README).
 4. PLAY.

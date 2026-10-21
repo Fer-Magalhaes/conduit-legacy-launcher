@@ -29,6 +29,7 @@ Sibling of [Conduit Launcher](https://github.com/Fer-Magalhaes/conduit-launcher)
 - **Patches and cheats** from RPCS3's database with switches: skip intro, field of view, no speed limit,
   all powers…
 - **Drag-and-drop mods**: drop a `.zip` in the `mods` folder. Format in [docs/MODS.md](docs/MODS.md).
+- **Installer for your own .pkg / .iso** files, limited to the tested releases.
 - **PSN releases** with encrypted (SDAT) files are decrypted by themselves into a copy; `.rap` licences next
   to the game are installed automatically.
 - Play time, Steam and desktop shortcuts, Discord status.
@@ -40,8 +41,23 @@ Sibling of [Conduit Launcher](https://github.com/Fer-Magalhaes/conduit-launcher)
 2. Open **Conduit Legacy Launcher.exe**. Click the **Emulator** tile to download RPCS3 and the firmware
    (about 240 MB).
 3. In **Game and language**, choose each game's folder, or put the games in the `jogos` folder (one sub-folder
-   per game) and the launcher finds them.
+   per game) and the launcher finds them. You can also use **Install .pkg / .iso** there (see below).
 4. Press **PLAY**.
+
+### Installing from .pkg / .iso
+
+**Game and language > Install .pkg / .iso** installs your own files into `jogos`. You can pick several at
+once, such as the game, its update and the `.rap` licence. Only the releases this launcher was tested with
+are accepted; anything else is refused:
+
+| Game | File | Release |
+|---|---|---|
+| inFAMOUS | `.iso` (decrypted disc dump) | BCES00609 |
+| inFAMOUS 2 | `.pkg` (game and update) | NPUA98125, BCUS98125 |
+| Festival of Blood | `.pkg` + `.rap` | NPUA80657 |
+
+PKGs are installed by RPCS3 itself. Disc images must already be decrypted (as the usual PS3 dump tools
+make them): the launcher does not decrypt discs and refuses encrypted images. It never downloads games.
 
 | Game | Folder | Releases |
 |---|---|---|

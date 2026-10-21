@@ -10,6 +10,9 @@
 - RPCS3 (GPL-2.0) and the PS3 system software are not part of it: the launcher downloads them from their
   official sources (RPCS3's GitHub, Sony's update server) when you ask. Decryption of PSN files is done by
   RPCS3 itself, with your own licences, on your PC.
+- The .pkg / .iso installer only works on files you provide, only for the releases listed in the README. PKGs
+  are installed by RPCS3; disc images must already be decrypted, and encrypted ones are refused. The launcher
+  never downloads games and never links to where to get them.
 - The launcher's own code is MIT licensed. It uses no official game images: its look, icon and background
   are its own.
 - Mods that contain the games' own files (text, audio, textures) are the publisher's copyrighted material.
@@ -29,6 +32,9 @@
 - O RPCS3 (GPL-2.0) e o firmware do PS3 não fazem parte dele: o launcher baixa das fontes oficiais (GitHub do
   RPCS3, servidor de atualizações da Sony) quando você pede. A decriptação de arquivos PSN é feita pelo
   próprio RPCS3, com as suas licenças, no seu PC.
+- O instalador de .pkg / .iso só trabalha com arquivos que você fornece, e só com as versões listadas no
+  README. Os PKGs são instalados pelo RPCS3; a imagem de disco precisa já estar decriptada, e as criptografadas
+  são recusadas. O launcher nunca baixa jogos nem indica onde consegui-los.
 - O código do launcher é licenciado em MIT. Ele não usa imagens oficiais dos jogos: o visual, o ícone e o
   fundo são próprios.
 - Mods que contêm arquivos dos jogos (texto, áudio, texturas) são obra protegida da editora. **Nunca os

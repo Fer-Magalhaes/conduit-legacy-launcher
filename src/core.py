@@ -383,7 +383,8 @@ def _locate(units, path):
 
 def prepare(game, settings, progress=lambda pct, msg: None):
     """Builds RPCS3's view of the game, its config, patches and controller. Returns (eboot, config path)."""
-    import mods, patches
+    import installer, mods, patches
+    installer.restore_vfs()  # in case a PKG install was cut short
     gs = settings['games'][game]
     g = GAMES[game]
     units, msg = detect(game, gs['folder'])

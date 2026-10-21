@@ -1,6 +1,9 @@
 import struct
-def read_sfo(path):
-    b = open(path, 'rb').read()
+
+
+def parse_sfo(b):
+    if b[:4] != b'\0PSF':
+        raise ValueError('not a PARAM.SFO')
     ko, do, n = struct.unpack('<III', b[8:20])
     out = {}
     for i in range(n):
@@ -9,3 +12,7 @@ def read_sfo(path):
         v = b[do + off:do + off + ln]
         out[key] = struct.unpack('<I', v[:4])[0] if fmt == 0x404 else v.rstrip(b'\0').decode('utf8', 'replace')
     return out
+
+
+def read_sfo(path):
+    return parse_sfo(open(path, 'rb').read())

@@ -12,6 +12,7 @@ import controllers
 import core
 import emulator
 import i18n
+import installer
 import mods
 import patches
 import presence
@@ -26,7 +27,7 @@ HERO_BLUE, EVIL_RED = '#3d9be9', '#e2452b'
 GRADE = {'platinum': '#b9d7ef', 'gold': '#e6b94a', 'silver': '#c3c7cf', 'bronze': '#c8834f'}
 ICON_FONT = 'Segoe Fluent Icons'
 APP_NAME = 'Conduit Legacy Launcher'
-APP_VERSION = '1.0.0'
+APP_VERSION = '1.1.0'
 EXE = sys.executable if getattr(sys, 'frozen', False) else os.path.join(core.ROOT, APP_NAME + '.exe')
 NO_WINDOW = 0x08000000
 TITLE = APP_NAME
@@ -724,6 +725,7 @@ class Launcher:
         row.pack(fill='x', padx=16, pady=10)
         self._button(row, _('Escolher pasta…'), self.pick).pack(side='left')
         self._button(row, _('Abrir pasta'), lambda: self._open(gs['folder'] or core.JOGOS)).pack(side='left', padx=8)
+        self._button(row, _('Instalar .pkg / .iso…'), self.install_files).pack(side='left')
         self._note(left, _('O que ele precisa: ') + _(self.NEEDS[self.game]), wrap=400).pack(fill='x', padx=16,
                                                                                          pady=(0, 14))
         right = self._card(body, _('IDIOMA DO JOGO'))
@@ -748,6 +750,44 @@ class Launcher:
         self.gs()['folder'] = d
         self.save()
         self.show('game')
+
+    def install_files(self):
+        if self.busy:
+            return
+        if not messagebox.askokcancel(TITLE, _('Instalar um jogo a partir de arquivos .pkg, .iso ou .rap seus.\n\n'
+                                               'Use só cópias tiradas do seu próprio disco ou da sua conta PSN. '
+                                               'O launcher não baixa jogos nem decripta discos.\n\nVersões '
+                                               'aceitas:\n%s') % installer.supported_text()):
+            return
+        paths = filedialog.askopenfilenames(title=_('Instalar .pkg / .iso'),
+                                            filetypes=[(_('Jogo de PS3'), '*.pkg *.iso *.rap')])
+        if not paths:
+            return
+        try:
+            installer.check(paths)
+        except (OSError, ValueError) as e:
+            messagebox.showerror(TITLE, str(e))
+            return
+        self.set_busy(True, _('INSTALANDO…'))
+
+        def work():
+            try:
+                games, notes = installer.install(paths, lambda d, n: self.progress(
+                    100 * d / max(n, 1), _('Instalando… %d / %d MB') % (d >> 20, n >> 20)))
+                for k in games:
+                    if core.detect(k, installer.game_folder(k))[0]:
+                        self.s['games'][k]['folder'] = installer.game_folder(k)
+                self.save()
+                names = ', '.join(core.GAMES[k]['name'] for k in games)
+                text = '\n\n'.join([_('Instalado: %s') % names] + notes)
+                self.root.after(0, lambda: (self.set_busy(False), self.status.configure(text=''),
+                                            self.show(self.page), messagebox.showinfo(TITLE, text)))
+            except Exception as e:
+                core.log(traceback.format_exc())
+                msg = str(e)
+                self.root.after(0, lambda: (self.set_busy(False), self.status.configure(text=''),
+                                            messagebox.showerror(TITLE, msg)))
+        threading.Thread(target=work, daemon=True).start()
 
     # ------------------------------------------------------------ page: graphics
     def _page_gfx(self, p):
