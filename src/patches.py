@@ -21,7 +21,7 @@ NAMES = {
     'Disable Mesh Trimming': (_('Sem corte de malha'), _('Necessário acima de 720p: sem ele aparecem buracos e '
                                                         'objetos somem.')),
     'All powers unlocked': (_('Todos os poderes desbloqueados'), _('Cheat: libera todos os poderes do Cole.')),
-    'Disable speed limit': (_('Sem limite de velocidade'), _('O Cole corre e desliza mais rápido.')),
+    'Disable speed limit': (_('Sem câmera lenta com FPS baixo'), _('O jogo não fica lento quando o FPS cai.')),
     'Disable refraction/shifting effect': (_('Sem efeito de refração'), _('Tira a distorção do ar quente e da '
                                                                          'água.')),
     'Change FOV': (_('Campo de visão maior'), _('Câmera mais aberta.')),

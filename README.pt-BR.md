@@ -27,8 +27,10 @@ Irmão do [Conduit Launcher](https://github.com/Fer-Magalhaes/conduit-launcher) 
 - **Troféus**: lista com ícones, raridade e data de cada um.
 - **Saves**: missão, karma e porcentagem de cada slot, backup automático antes de jogar, restaurar,
   exportar e importar.
-- **Patches e cheats** do banco do RPCS3, com chave: pular a abertura, campo de visão, sem limite de
-  velocidade, todos os poderes…
+- **Patches e cheats** do banco do RPCS3, com chave: pular a abertura, campo de visão, sem câmera lenta
+  com FPS baixo, todos os poderes (inFAMOUS)…
+- **Cheat do launcher**: XP infinito no inFAMOUS 2 (1.04), mantido na memória enquanto o jogo roda; nenhum
+  arquivo é alterado.
 - **Mods de arrastar e soltar**: jogue um `.zip` na pasta `mods`. Formato em [docs/MODS.md](docs/MODS.md).
 - **Instalador para os seus .pkg / .iso**, limitado às versões testadas.
 - **Versões PSN** com arquivos criptografados (SDAT) são decriptadas sozinhas, numa cópia. Licenças `.rap`

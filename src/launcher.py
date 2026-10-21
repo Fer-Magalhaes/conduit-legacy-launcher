@@ -13,6 +13,7 @@ import core
 import emulator
 import i18n
 import installer
+import trainer
 import mods
 import patches
 import presence
@@ -121,6 +122,8 @@ def run_game(game, s, progress, on_started=None):
         core.log('backup dos saves falhou: %s' % e)
     eboot, cfg = core.prepare(game, s, progress)
     proc = core.launch(eboot, cfg, s)
+    tr = trainer.Trainer(game, proc.pid, s['games'][game]['cheats_on'])
+    tr.start()
     g = core.GAMES[game]
     rp = presence.Presence(game, g['name'], g['state']) if s['discord'] else None
     if on_started:
@@ -128,6 +131,7 @@ def run_game(game, s, progress, on_started=None):
     try:
         code = proc.wait()
     finally:
+        tr.stop.set()
         if rp:
             rp.close()
     core.log('RPCS3 saiu com código %s' % code)
@@ -969,6 +973,9 @@ class Launcher:
             self._mod_row(left, x['title'], (_('Ligado sozinho acima de 720p. ') if x['auto'] else '') + x['desc'],
                           auto or x['name'] in gs['patches_on'],
                           lambda on, n=x['name']: self._toggle(gs, 'patches_on', n, on), enabled=not auto)
+        for x in trainer.for_game(self.game):
+            self._mod_row(left, x['title'], _('Cheat do launcher, enquanto o jogo roda. ') + x['desc'],
+                          x['id'] in gs['cheats_on'], lambda on, n=x['id']: self._toggle(gs, 'cheats_on', n, on))
         foot = tk.Frame(left, bg=PANEL)
         foot.pack(fill='x', padx=16, pady=(8, 14))
         self._button(foot, _('Baixar patches') if not plist else _('Atualizar patches'), self.update_patches).pack(

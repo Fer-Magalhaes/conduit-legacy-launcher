@@ -109,7 +109,7 @@ PAD_MODES = [(_('Detectar sozinho'), 'auto'), (_('Xbox / XInput (8BitDo, etc.)')
              ('DualShock 4', 'ds4'), ('DualSense', 'dualsense'), (_('Só teclado'), 'keyboard')]
 
 GAME_DEFAULTS = {'folder': '', 'lang': '', 'res': 150, 'fsr': False, 'aniso': 8, 'msaa': 'Auto',
-                 'vsync': 'Disabled', 'fps': 'Auto', 'patches_on': [], 'mods_on': None}
+                 'vsync': 'Disabled', 'fps': 'Auto', 'patches_on': [], 'cheats_on': [], 'mods_on': None}
 DEFAULTS = {'fullscreen': True, 'show_fps': False, 'sharpness': 50, 'stretch': False,
             'spu_threads': 0, 'low_end': False, 'scheduler': 'Operating System', 'priority': 'normal',
             'volume': 100, 'audio_format': 'Stereo', 'buffering': True, 'time_stretch': False,

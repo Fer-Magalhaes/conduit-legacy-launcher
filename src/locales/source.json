@@ -242,8 +242,6 @@
 "Necessário acima de 720p: sem ele aparecem buracos e objetos somem.",
 "Todos os poderes desbloqueados",
 "Cheat: libera todos os poderes do Cole.",
-"Sem limite de velocidade",
-"O Cole corre e desliza mais rápido.",
 "Sem efeito de refração",
 "Tira a distorção do ar quente e da água.",
 "Campo de visão maior",
@@ -278,5 +276,10 @@
 "Instalar um jogo a partir de arquivos .pkg, .iso ou .rap seus.\n\nUse só cópias tiradas do seu próprio disco ou da sua conta PSN. O launcher não baixa jogos nem decripta discos.\n\nVersões aceitas:\n%s",
 "Jogo de PS3",
 "Instalando… %d / %d MB",
-"Instalado: %s"
+"Instalado: %s",
+"Cheat do launcher, enquanto o jogo roda. ",
+"Sem câmera lenta com FPS baixo",
+"O jogo não fica lento quando o FPS cai.",
+"XP infinito",
+"O XP disponível fica em 99.999: compre todos os poderes já liberados. O XP fica salvo."
 ]

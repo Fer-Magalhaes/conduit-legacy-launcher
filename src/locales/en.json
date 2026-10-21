@@ -242,8 +242,6 @@
 "Needed above 720p: without it holes appear and objects disappear.",
 "All powers unlocked",
 "Cheat: unlocks all of Cole's powers.",
-"No speed limit",
-"Cole runs and grinds faster.",
 "No refraction effect",
 "Removes the heat haze and water distortion.",
 "Wider field of view",
@@ -278,5 +276,10 @@
 "Install a game from your own .pkg, .iso or .rap files.\n\nOnly use copies dumped from your own disc or your own PSN account. The launcher does not download games or decrypt discs.\n\nAccepted releases:\n%s",
 "PS3 game",
 "Installing… %d / %d MB",
-"Installed: %s"
+"Installed: %s",
+"Launcher cheat, while the game runs. ",
+"No slow-down at low FPS",
+"The game does not slow down when the FPS drops.",
+"Infinite XP",
+"Available XP stays at 99,999: buy every power already unlocked. The XP is saved."
 ]

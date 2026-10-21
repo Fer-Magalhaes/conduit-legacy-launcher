@@ -26,8 +26,10 @@ Sibling of [Conduit Launcher](https://github.com/Fer-Magalhaes/conduit-launcher)
   DualShock 4 and DualSense with rumble and light colour. Keyboard when there is no controller.
 - **Trophies**: list with icons, grade and unlock date.
 - **Saves**: mission, karma and completion per slot, automatic backup before playing, restore, export, import.
-- **Patches and cheats** from RPCS3's database with switches: skip intro, field of view, no speed limit,
-  all powers…
+- **Patches and cheats** from RPCS3's database with switches: skip intro, field of view, no slow-down at
+  low FPS, all powers (inFAMOUS)…
+- **Launcher cheat**: infinite XP in inFAMOUS 2 (1.04), kept in memory while the game runs; files are not
+  changed.
 - **Drag-and-drop mods**: drop a `.zip` in the `mods` folder. Format in [docs/MODS.md](docs/MODS.md).
 - **Installer for your own .pkg / .iso** files, limited to the tested releases.
 - **PSN releases** with encrypted (SDAT) files are decrypted by themselves into a copy; `.rap` licences next
