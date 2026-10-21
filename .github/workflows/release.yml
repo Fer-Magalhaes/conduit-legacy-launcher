@@ -1,0 +1,57 @@
+# Builds the launcher on Windows when a version tag (v1.0.0, ...) is pushed and attaches the zip to
+# that tag's GitHub release. The zip has the launcher only: no game files and no emulator.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install build tools
+        run: pip install -r requirements.txt
+
+      - name: Check translations
+        run: python tools/i18n_check.py
+
+      - name: Build
+        shell: cmd
+        run: call build.bat
+
+      - name: Zip
+        shell: pwsh
+        run: |
+          $name = "Conduit-Legacy-Launcher-$env:GITHUB_REF_NAME-windows.zip"
+          Compress-Archive -Path "dist/Conduit Legacy Launcher" -DestinationPath $name
+          "ZIP=$name" | Out-File -FilePath $env:GITHUB_ENV -Append
+
+      - name: Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.ZIP }}
+          body: |
+            Unofficial fan-made launcher for inFAMOUS, inFAMOUS 2 and Festival of Blood (PS3) on PC, through RPCS3. **No game files are included.**
+            Launcher não oficial, feito por fãs. **Nenhum arquivo do jogo incluído.**
+
+            1. Extract the zip / Extraia o zip.
+            2. Open `Conduit Legacy Launcher.exe` and download RPCS3 + the PS3 firmware from the "Emulator" tile / Abra e baixe o RPCS3 e o firmware pelo quadro "Emulador".
+            3. Choose each game folder in "Game and language" / Escolha a pasta de cada jogo em "Jogo e idioma".
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        with:
+          name: Conduit-Legacy-Launcher
+          path: dist/Conduit Legacy Launcher

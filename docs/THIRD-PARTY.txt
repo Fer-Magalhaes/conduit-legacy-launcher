@@ -1,0 +1,22 @@
+Third-party software inside this build of Conduit Legacy Launcher
+=================================================================
+
+The launcher is a Python program packaged with PyInstaller. The packaged folder (_internal) contains:
+
+- Python 3 runtime - Python Software Foundation License Version 2
+  https://docs.python.org/3/license.html
+- Tcl/Tk (used by Tkinter) - BSD-style Tcl/Tk license
+  https://www.tcl.tk/software/tcltk/license.html
+- Pillow - MIT-CMU (HPND) license
+  https://github.com/python-pillow/Pillow/blob/main/LICENSE
+- PyYAML - MIT license
+  https://github.com/yaml/pyyaml/blob/main/LICENSE
+- PyInstaller bootloader - GPL-2.0 with a special exception that allows using it in programs under
+  any license
+  https://github.com/pyinstaller/pyinstaller/blob/develop/COPYING.txt
+
+Not included (downloaded by the user, from their own sources, only when asked):
+- RPCS3 - GPL-2.0 - source: https://github.com/RPCS3/rpcs3
+- PS3 system software - Sony Interactive Entertainment - from Sony's update server
+- RPCS3 patch database - its authors - https://rpcs3.net
+- Microsoft Visual C++ runtime - Microsoft

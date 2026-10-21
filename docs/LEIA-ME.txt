@@ -1,0 +1,28 @@
+Conduit Legacy Launcher - launcher NAO OFICIAL para inFAMOUS, inFAMOUS 2 e Festival of Blood (PS3) no PC
+=========================================================================================================
+
+Projeto de fa, nao oficial. Nao e afiliado a Sony Interactive Entertainment, a Sucker Punch Productions
+nem a equipe do RPCS3. Nenhum arquivo dos jogos vem com o launcher: use as suas proprias copias.
+
+Comecar
+-------
+1. Abra "Conduit Legacy Launcher.exe".
+2. Clique no quadro "Emulador" para baixar o RPCS3 e o firmware do PS3 (ou rode baixar-emulador.bat).
+3. Em "Jogo e idioma", escolha a pasta de cada jogo (ou coloque os jogos na pasta "jogos").
+4. JOGAR.
+
+Mods: arraste o .zip para a pasta "mods". Formato em MODS.md.
+Guia completo e problemas comuns: README no repositorio do projeto.
+Creditos: CREDITS.md. Licenca do launcher: LICENSE.txt (MIT). Componentes: THIRD-PARTY.txt.
+
+
+Conduit Legacy Launcher - UNOFFICIAL launcher for inFAMOUS, inFAMOUS 2 and Festival of Blood (PS3) on PC
+=========================================================================================================
+
+Unofficial fan project, not affiliated with Sony Interactive Entertainment, Sucker Punch Productions or the
+RPCS3 team. No game files are included: use your own copies.
+
+1. Open "Conduit Legacy Launcher.exe".
+2. Click the "Emulator" tile to download RPCS3 and the PS3 firmware (or run baixar-emulador.bat).
+3. In "Game and language", choose each game's folder (or put the games in the "jogos" folder).
+4. PLAY.

@@ -1,0 +1,42 @@
+# Built launcher
+build/
+dist/
+*.spec
+__pycache__/
+*.pyc
+
+# Everything the launcher downloads or makes on the user's PC
+emu/
+user/
+out/
+art/
+mods/
+jogo/
+
+# Never commit game files (copyrighted) or anything taken from them
+*.pkg
+*.psarc
+*.xpps
+*.bin
+*.sprx
+*.prx
+*.elf
+*.self
+eboot*
+param.sfo
+CUSA*/
+*.zip
+rpcs3/
+jogos/
+*.iso
+*.PUP
+*.pup
+*.rap
+*.edat
+*.sdat
+*.sprx
+*.psarc_s
+*.xpp
+*.bsub
+PS3_GAME/
+dev_hdd0/
